@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Montserrat:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     box-sizing:border-box;
 
@@ -5,6 +6,19 @@
 html, body{
     overflow-x: hidden;
     margin:0px;padding:0px;
+}
+:root{
+    --jost: 'Jost', sans-serif;
+    --montserrat: 'Montserrat', sans-serif;
+    --cm-success:#39B54A;
+    --cm-dark:#111111;
+    --cm-light:#E6E6E6;
+}
+.jumbotron{
+    background:transparent;
+}
+hr{
+    background:#ddd;
 }
 
 /* ============================================================================
@@ -14,6 +28,111 @@ header{
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
+    background-attachment: fixed;
     width:100%;
-    height:100vh;
+}
+.toggleable-sitebar-item{
+    width:300px;
+    height:120vh;
+    position: fixed;
+    z-index: 1000;
+    top:2%;
+    right:0px;
+    transition: transform 1s;
+    transform: translateX(350px);
+}
+.toggleable-sitebar-item:hover{
+     overflow-y: auto;
+}
+/* .toggleable-sitebar-item .navbar .navbar-nav{
+    padding:20px;
+} */
+.toggleable-sitebar-item .navbar .navbar-nav a{
+    margin:10px 5px;
+    padding:10px 30px;
+    width:100%;
+}
+.toggleable-sitebar-item .navbar .navbar-nav a:hover{
+    background:grey;
+}
+header i.fa-bars{
+    color:white;
+    background:#343A40;
+    padding:10px;
+    font-size:25px;
+    cursor:pointer;
+    
+}
+header input#toggleInput{
+    visibility: hidden;
+}
+#togglerIcon{
+    position: fixed;
+    top:2%;
+    right:2%;
+    background:#343A40;
+}
+label i.fas.fa-times{
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    padding:10px;
+}
+header input#toggleInput:checked ~ .toggleable-sitebar-item{
+    transform:translateX(0px);
+}
+#header_text_section{
+    color:white;
+    font-family:var(--jost);
+}
+#header_text_section .container-fluid h1{
+    font-family:var(--jost);
+    color:white;
+    font-size:62px;
+}
+#header_text_section div.desc{
+    padding:5rem;
+}
+section#hello_there{
+    background:var(--cm-success);
+}
+section#hello_there .title, .title{
+    padding-top:15%;
+}
+section#hello_there .title h1, .title h1{
+    font-size:70px;
+    color:white;
+    padding-bottom:2%;
+
+}
+section#hello_there .desc p{
+    font-size:30px;
+    text-align:justify;
+    padding:0 5%;
+}
+section#hello_there .card_T{
+    margin-bottom:10px;
+}
+section#hello_there .card_T h1{
+    font-size:4.7rem;
+    color:white;
+    font-family:var(--montserrat);
+    font-weight:700;
+}
+.media i{
+    color:var(--cm-success);
+    border:var(--cm-success) 2px solid;
+    border-radius:50%;
+    padding:10px;
+    box-sizing:border-box;
+    font-size:25px;
+}
+.media-body h2{
+    font-family:var(--montserrat);
+    font-size:35px;
+    font-weight:600;
+}
+ .media-body p{
+    font-size:20px;
+    font-family:serif;
 }
